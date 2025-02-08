@@ -90,7 +90,6 @@ export default function PlantAPI() {
               </FormControl>
             </Grid>
             <Grid
-              item
               xs={4}
               display="flex"
               justifyContent="center"
