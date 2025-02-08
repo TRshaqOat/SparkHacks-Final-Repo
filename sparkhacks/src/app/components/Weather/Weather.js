@@ -62,7 +62,7 @@ export default function Weather(props) {
     } else {
       console.error("Geolocation is not supported by this browser.");
     }
-  }, [weatherData]);
+  });
 
   const tempSeries = {
     type: "line",
@@ -132,6 +132,64 @@ export default function Weather(props) {
   return (
     <div>
       <h1>Weather</h1>
+      <form>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setTemperatureView(!temperatureView);
+          }}
+        >
+          Temperature
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setPrecipitationView(!precipitationView);
+          }}
+        >
+          Percipitation
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setSoilTemperature0cmView(!soilTemperature0cmView);
+          }}
+        >
+          Soil-Temp 0cm
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setSoilTemperature18cmView(!soilTemperature18cmView);
+          }}
+        >
+          Soil-Temp 18cm
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setSoilMoisture0To1cmView(!soilMoisture0To1cmView);
+          }}
+        >
+          Soil Moisutre 0-1cm
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setSoilMoisture9To27cmView(!soilMoisture9To27cmView);
+          }}
+        >
+          Soil Moisutre 9-27cm
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setRelativeHumidity2mView(!relativeHumidity2mView);
+          }}
+        >
+          Humidity
+        </button>
+      </form>
       <h2>{location.longitude}</h2>
       <h2>{location.latitude}</h2>
       {weatherData.hourly.time.length > 0 ? (
