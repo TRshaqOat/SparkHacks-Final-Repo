@@ -244,7 +244,10 @@ a.secondary {
   border-width: 5px;
   border-color: black;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   background-color: #03421d9d;
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }
@@ -262,11 +265,14 @@ a.secondary {
   grid-column: span 2;
   text-align: center;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
 fer 
 .PlantInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 3;
   background-color: #03421d9d;
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }
@@ -276,7 +282,11 @@ fer
   text-align: center;
   font-weight: 500;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   background-color: rgb(192, 238, 255);
+=======
+  background-color: pink;
+>>>>>>> Stashed changes
 =======
   background-color: pink;
 >>>>>>> Stashed changes
@@ -298,7 +308,11 @@ fer
 
 .InfoCard .delete { /* Delete Button*/
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   background-color:#547c68;
+=======
+  background-color:#344e4168;
+>>>>>>> Stashed changes
 =======
   background-color:#344e4168;
 >>>>>>> Stashed changes
