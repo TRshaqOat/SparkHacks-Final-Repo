@@ -2,6 +2,7 @@
 
 import styles from "./page.module.css";
 import PlantInventory from "./components/PlantInventory/PlantInventory";
+import Weather from "./components/Weather/Weather";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.row}>
           <div className={styles.container}>
-            <PlantInventory></PlantInventory>
+            <Weather></Weather>
           </div>
           <div className={styles.container}>
             <PlantInventory></PlantInventory>
