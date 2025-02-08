@@ -151,15 +151,9 @@ export default function PlantInventory() {
             className={styles.span2}
           />
         </div>
-        <IconButton
-          onClick={addItem}
-          type="submit"
-          color="white"
-          aria-label="add to shopping cart"
-          size="small"
-        >
-          <AddShoppingCartIcon fontSize="small" />
-        </IconButton>
+        <button onClick={addItem} type="submit">
+          Add
+        </button>
       </form>
       <input
         value={search}
