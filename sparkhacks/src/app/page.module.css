@@ -32,10 +32,8 @@
   height: 100%;
 }
 
-
-
-
-.container{ /* border of each quadrent */
+.container {
+  /* border of each quadrent */
   display: table-cell;
   width: 50%;
   height: 50%;
@@ -44,10 +42,10 @@
   margin: 50px;
   border-width: 5px;
   /*  border-color: rgba(0, 127, 141, 0.305); */
-  border-color: #344E41;
+  border-color: #344e41;
 }
 
-.row{
+.row {
   display: table-row;
 }
 
@@ -85,10 +83,7 @@
   padding: 0 20px;
   border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -96,7 +91,6 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
-
 }
 
 a.primary {
@@ -179,18 +173,12 @@ a.secondary {
   }
 }
 
-
-
-
-
-
-
-
 /*
   Plant Inventory
  */
 
-.PlantInventory form{ /* Form Area */
+.PlantInventory form {
+  /* Form Area */
   /* border: 2px solid red; */
   display: grid;
   column-gap: 7px;
@@ -199,15 +187,15 @@ a.secondary {
 
   margin-bottom: 5px;
   text-align: center;
-  font-size: 16pt; 
+  font-size: 16pt;
 
   background-color: rgba(88, 178, 91, 0.392);
   border-radius: 20px;
   /* Not able to get border to show??*/
-
 }
 
-.PlantInventory input{ /* Input Fields */
+.PlantInventory input {
+  /* Input Fields */
   /* border: 2px solid blue; */
   height: 3em;
   width: 100%;
@@ -219,9 +207,8 @@ a.secondary {
   text-align: center;
 }
 
-
-
-.PlantInventory button{ /* Add Button */
+.PlantInventory button {
+  /* Add Button */
   background-color: #353535;
   opacity: 100%;
   margin-top: 2em;
@@ -237,45 +224,37 @@ a.secondary {
   border-color: black;
 }
 
-<<<<<<< Updated upstream
-.PlantInventory .scrollContainer{ /* Padding around the inside of each Quadrent */
-  height: 30vh;
-  overflow-y: scroll;
-  border-radius: 10px;
-  background-color: rgba(4, 74, 117, 0.655);
-  padding: 10px;
-
-=======
-.PlantInventory .scrollContainer{ /* Padding around the inside of table of cells */
+.PlantInventory .scrollContainer {
+  /* Padding around the inside of table of cells */
   height: 25vh;
   overflow-y: scroll;
   border-radius: 10px;
   background-color: rgba(4, 74, 117, 0.655);
-  background-color: #F5F5DC;
-  
->>>>>>> Stashed changes
+  background-color: #f5f5dc;
 }
 
-.PlantInventory .span2 { /*inside of each box in form (name, acres, dates, etc) */
+.PlantInventory .span2 {
+  /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
   text-align: center;
 }
 
-.PlantInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
+.PlantInventory .span3 {
+  /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 3;
 }
 
-.InfoCard .span2 { /* Inside of Cells */
+.InfoCard .span2 {
+  /* Inside of Cells */
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
   background-color: pink;
-  text-wrap:balance;
-
-  
+  text-wrap: balance;
 }
 
-.InfoCard{ /* Background of Each row */
+.InfoCard {
+  /* Background of Each row */
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: 2.5em;
@@ -283,11 +262,11 @@ a.secondary {
   align-items: center;
   margin-bottom: 7px;
   background-color: rgba(0, 127, 141, 0.305);
-  
 }
 
-.InfoCard .delete { /* Delete Button*/
-  background-color:#344e4168;
+.InfoCard .delete {
+  /* Delete Button*/
+  background-color: #344e4168;
   height: 2.5em;
   width: 5em;
   display: flex;
@@ -298,30 +277,28 @@ a.secondary {
   border-color: black;
 }
 
-.InfoCard .delete:hover{
-  background-color:#9432329d;
+.InfoCard .delete:hover {
+  background-color: #9432329d;
 }
 
 .InfoCard h1,
 .InfoCard h2,
 .InfoCard h3,
-.InfoCard .delete{
+.InfoCard .delete {
   width: 100%;
   height: 100%;
   border: 2px solid black;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-
-
-
 
 /*
   Machine Inventory
  */
 
- .MachineryInventory form{ /* Form Area */
+.MachineryInventory form {
+  /* Form Area */
   /* border: 2px solid red; */
   display: grid;
   column-gap: 5px;
@@ -330,15 +307,15 @@ a.secondary {
 
   margin-bottom: 5px;
   text-align: center;
-  font-size: 16pt; 
+  font-size: 16pt;
 
   background-color: rgba(88, 178, 91, 0.392);
   border-radius: 20px;
   /* Not able to get border to show??*/
-
 }
 
-.MachineryInventory input{ /* Input Fields */
+.MachineryInventory input {
+  /* Input Fields */
   /* border: 2px solid blue; */
   height: 3em;
   width: 100%;
@@ -350,9 +327,8 @@ a.secondary {
   text-align: center;
 }
 
-
-
-.MachineryInventory button{ /* Add Button */
+.MachineryInventory button {
+  /* Add Button */
   background-color: #353535;
   opacity: 100%;
   margin-top: 2em;
@@ -370,33 +346,35 @@ a.secondary {
   background-color: orange;
 }
 
-.MachineryInventory .scrollContainer{ /* Padding around the inside of each Quadrent */
+.MachineryInventory .scrollContainer {
+  /* Padding around the inside of each Quadrent */
   height: 30vh;
   overflow-y: scroll;
   border-radius: 10px;
   background-color: rgba(4, 74, 117, 0.655);
   padding: 10px;
-
 }
 
-.MachineryInventory .span2 { /*inside of each box in form (name, acres, dates, etc) */
+.MachineryInventory .span2 {
+  /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
 }
 
-.MachineryInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
+.MachineryInventory .span3 {
+  /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 3;
 }
 
-
-
-.InfoCard .span2 { /* Inside of Cells */
+.InfoCard .span2 {
+  /* Inside of Cells */
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
   background-color: pink; /*PINK HERE*/
 }
 
-.MachineryInventory .InfoCard{ /* Background of Each row */
+.MachineryInventory .InfoCard {
+  /* Background of Each row */
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: 2.5em;
@@ -406,8 +384,9 @@ a.secondary {
   background-color: rgba(0, 127, 141, 0.305);
 }
 
-.MachineryInventory .InfoCard .delete { /* Delete Button*/
-  background-color:#979797;
+.MachineryInventory .InfoCard .delete {
+  /* Delete Button*/
+  background-color: #979797;
   height: 2.5em;
   width: 5em;
   display: flex;
@@ -418,11 +397,11 @@ a.secondary {
   border-color: black;
 }
 
-.MachineryInventory .InfoCard .delete:hover{
-  background-color:#9432329d;
+.MachineryInventory .InfoCard .delete:hover {
+  background-color: #9432329d;
 }
 
-.MachineryInventory .InfoCard h2{
+.MachineryInventory .InfoCard h2 {
   font-size: medium;
 }
 
@@ -430,29 +409,27 @@ a.secondary {
 .MachineryInventory .InfoCard h2,
 .MachineryInventory .InfoCard h3,
 .MachineryInventory .InfoCard h4,
-.MachineryInventory .InfoCard .delete{
+.MachineryInventory .InfoCard .delete {
   width: 100%;
   height: 100%;
   border: 2px solid black;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-
-
 
 /*
   Weather
 */
 
-.Weather form{
+.Weather form {
   display: grid;
   column-gap: 5px;
   grid-template-columns: repeat(14, 1fr);
   width: 100%;
 }
 
-.Weather button{
+.Weather button {
   grid-column: span 2;
   height: 2.5rem;
   background-color: #282c34;
@@ -464,7 +441,7 @@ a.secondary {
   background-color: #282c34;
 } */
 
-.Weather button:hover{
+.Weather button:hover {
   background-color: #4a4a4a;
 }
 
@@ -491,10 +468,10 @@ a.secondary {
   font-family: sans-serif;
 }
 .Weather input:checked + span {
-    background: #4a4a4a;
-    color: #fff;
+  background: #4a4a4a;
+  color: #fff;
 }
 
-.Weather input:not(:checked)+span{
+.Weather input:not(:checked) + span {
   background: rebeccapurple;
 }
