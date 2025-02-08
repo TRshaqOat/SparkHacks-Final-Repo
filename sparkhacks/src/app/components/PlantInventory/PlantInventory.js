@@ -12,6 +12,7 @@ import { db } from "../../firebase";
 import InfoCard from "./InfoCard";
 import styles from "../../page.module.css";
 
+
 export default function PlantInventory() {
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState({

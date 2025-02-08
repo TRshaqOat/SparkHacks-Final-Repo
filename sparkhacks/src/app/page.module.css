@@ -34,7 +34,6 @@
 
 
 
-
 .container{ /* border of each quadrent */
   display: table-cell;
   width: 50%;
@@ -254,6 +253,10 @@ a.secondary {
 
 .PlantInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 3;
+}
+
+.PlantInventory .test{
+  font-size: small;
 }
 
 .InfoCard .span2 { /* Inside of Cells */

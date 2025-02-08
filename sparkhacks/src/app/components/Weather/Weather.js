@@ -3,7 +3,6 @@ import getData from "./data";
 import Papa from "papaparse";
 import styles from "../../page.module.css";
 
-import Typography from "@mui/material/Typography";
 import { BarPlot } from "@mui/x-charts/BarChart";
 import { LineHighlightPlot, LinePlot } from "@mui/x-charts/LineChart";
 import { ResponsiveChartContainer } from "@mui/x-charts/ResponsiveChartContainer";
@@ -13,7 +12,9 @@ import { ChartsYAxis } from "@mui/x-charts/ChartsYAxis";
 import { ChartsTooltip } from "@mui/x-charts/ChartsTooltip";
 import { ChartsAxisHighlight } from "@mui/x-charts/ChartsAxisHighlight";
 import { axisClasses } from "@mui/x-charts/ChartsAxis";
-import { fallbackModeToStaticPathsResult } from "next/dist/lib/fallback";
+
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 export default function Weather(props) {
   const [location, setLocation] = useState({});
@@ -145,67 +146,85 @@ export default function Weather(props) {
 
   const dates = weatherData.hourly.time.map((day) => new Date(day));
 
+  const [formats, setFormats] = useState([]);
+
+  const handleFormat = (event, newFormats) => {
+    setFormats(newFormats);
+  };
+
   return (
     <div className={styles.Weather}>
       <h1>Weather</h1>
-      <form>
-        <button
+      <ToggleButtonGroup
+        value={formats}
+        onChange={handleFormat}
+        aria-label="text formatting"
+      >
+        <ToggleButton
           onClick={(e) => {
-            e.preventDefault();
             setTemperatureView(!temperatureView);
           }}
+          value="temperature"
+          sx={{ color: "#d4d4d4" }}
         >
           Temperature
-        </button>
-        <button
+        </ToggleButton>
+        <ToggleButton
+          value="percipitation"
           onClick={(e) => {
-            e.preventDefault();
             setPrecipitationView(!precipitationView);
           }}
+          sx={{ color: "#d4d4d4" }}
         >
           Percipitation
-        </button>
-        <button
+        </ToggleButton>
+        <ToggleButton
+          value="soiltemp0"
           onClick={(e) => {
-            e.preventDefault();
             setSoilTemperature0cmView(!soilTemperature0cmView);
           }}
+          sx={{ fontSize: "10px;", color: "#d4d4d4" }}
         >
           Soil-Temp 0cm
-        </button>
-        <button
+        </ToggleButton>
+        <ToggleButton
+          value="soiltemp18"
           onClick={(e) => {
-            e.preventDefault();
             setSoilTemperature18cmView(!soilTemperature18cmView);
           }}
+          sx={{ fontSize: "10px;", color: "#d4d4d4" }}
         >
           Soil-Temp 18cm
-        </button>
-        <button
+        </ToggleButton>
+        <ToggleButton
+          value="soilM01"
           onClick={(e) => {
-            e.preventDefault();
             setSoilMoisture0To1cmView(!soilMoisture0To1cmView);
           }}
+          sx={{ fontSize: "10px;", color: "#d4d4d4" }}
         >
-          Soil Moisutre 0-1cm
-        </button>
-        <button
+          Soil Moisture 0-1 cm
+        </ToggleButton>
+        <ToggleButton
+          value="soilM927"
           onClick={(e) => {
-            e.preventDefault();
             setSoilMoisture9To27cmView(!soilMoisture9To27cmView);
           }}
+          sx={{ fontSize: "10px;", color: "#d4d4d4" }}
         >
-          Soil Moisutre 9-27cm
-        </button>
-        <button
+          Soil Moisture 9-27 cm
+        </ToggleButton>
+        <ToggleButton
+          value="hum"
           onClick={(e) => {
-            e.preventDefault();
             setRelativeHumidity2mView(!relativeHumidity2mView);
           }}
+          sx={{ color: "#d4d4d4" }}
         >
           Humidity
-        </button>
-      </form>
+        </ToggleButton>
+      </ToggleButtonGroup>
+
       {weatherData.hourly.time.length > 0 ? (
         <ResponsiveChartContainer
           series={[
