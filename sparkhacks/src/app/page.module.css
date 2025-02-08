@@ -207,9 +207,8 @@ a.secondary {
   /* Input Fields */
   /* border: 2px solid blue; */
   margin-top: 5px;
-  margin-left: 10px;
   height: 3em;
-  width: 100%;
+  width: 98%;
 
   background-color: #282c34;
   border-radius: 15px;
@@ -333,7 +332,8 @@ a.secondary {
   /* Input Fields */
   /* border: 2px solid blue; */
   height: 3em;
-  width: 100%;
+  width: 98%;
+  margin-top: 5px;
 
   background-color: #282c34;
   border-radius: 15px;
