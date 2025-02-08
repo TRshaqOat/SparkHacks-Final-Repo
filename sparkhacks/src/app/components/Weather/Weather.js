@@ -6,17 +6,25 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({});
 
   useEffect(() => {
-    var lat = 0;
-    var long = 0;
+    const fetchWeatherData = async (lat, long) => {
+      try {
+        const data = await getData(lat, long);
+        setWeatherData(data);
+      } catch (error) {
+        console.error("Error fetching weather data: ", error);
+      }
+    };
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          lat = position.coords.latitude;
-          long = position.coords.longitude;
+          const lat = position.coords.latitude;
+          const long = position.coords.longitude;
           setLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
+            latitude: lat,
+            longitude: long,
           });
+          fetchWeatherData(lat, long);
         },
         (error) => {
           console.error("Error getting location:", error);
@@ -25,18 +33,11 @@ export default function Weather(props) {
     } else {
       console.error("Geolocation is not supported by this browser.");
     }
-
-    var data;
-    async () => {
-      data = await getData(lat, long);
-    };
-    setWeatherData(data);
-    console.log(weatherData);
   }, []);
 
   return (
     <div>
-      <h1>Weather</h1>
+      <h1 onClick={console.log(weatherData)}>Weather</h1>
       <h2>{location.longitude}</h2>
       <h2>{location.latitude}</h2>
     </div>
