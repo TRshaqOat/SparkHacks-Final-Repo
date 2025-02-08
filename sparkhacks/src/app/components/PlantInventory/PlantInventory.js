@@ -57,13 +57,13 @@ export default function PlantInventory() {
         lastHarvestYield: newItem.lastHarvestYield,
         datePlanted: newItem.datePlanted,
       });
-      // setNewItem({
-      //   name: "",
-      //   acresPlanted: "",
-      //   lastHarvested: "",
-      //   lastHarvestYield: "",
-      //   datePlanted: "",
-      // });
+      setNewItem({
+        name: "",
+        acresPlanted: "",
+        lastHarvested: "",
+        lastHarvestYield: "",
+        datePlanted: "",
+      });
     } else {
       alert("NOT ADDED");
     }
