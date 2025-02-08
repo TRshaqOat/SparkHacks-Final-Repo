@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.4.3",
     "@mui/x-charts": "^7.26.0",
+    "@types/react-window": "^1.8.8",
     "axios": "^1.7.9",
     "firebase": "^11.3.0",
     "material-icons": "^1.13.13",
@@ -21,7 +22,8 @@
     "openmeteo": "^1.1.4",
     "papaparse": "^5.5.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-window": "^1.8.11"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

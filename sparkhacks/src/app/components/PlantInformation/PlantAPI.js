@@ -2,16 +2,20 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Fab from "@mui/material/Fab";
 import styles from "../../page.module.css";
+import Grid from "@mui/material/Grid2";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { FixedSizeList } from "react-window";
+import { Stack } from "@mui/material";
 
 export default function PlantAPI() {
-  const [location, setLocation] = useState({});
-
-  const [name, setName] = useState();
-  const [link, setLink] = useState();
-  const [address, setAddress] = useState();
-  const [phone, setPhone] = useState();
-
   const [farmers, setFarmers] = useState([]);
 
   const [inputRadius, setInputRadius] = useState(0);
@@ -37,6 +41,7 @@ export default function PlantAPI() {
   }, []);
 
   const searchMarkets = async () => {
+    setFarmers([]);
     console.log("CLICKEd");
     const options = {
       method: "GET",
@@ -46,18 +51,7 @@ export default function PlantAPI() {
       try {
         const response = await axios.request(options);
 
-        setName(response.data.data[0].listing_name);
-        setLink(response.data.data[0].media_website);
-        setAddress(response.data.data[0].location_address);
-        setPhone(response.data.data[0].contact_phone);
-
         setFarmers(response.data.data);
-
-        console.log(name);
-        console.log(link);
-        console.log(address);
-        console.log(phone);
-        console.log(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -67,41 +61,92 @@ export default function PlantAPI() {
   };
 
   return (
-    <div className={styles.PlantInventory}>
-      <h1>Farmers Market</h1>
+    <div className={styles.MarketInfo}>
+      <h1 style={{ marginBottom: 5 }}>Farmers Market</h1>
       <div className="search">
-        <form>
-          <input
-            value={inputRadius}
-            onChange={(e) => setInputRadius(e.target.value)}
-            placeholder="Enter Radius (miles)"
-          />
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              searchMarkets();
-            }}
+        <div>
+          <Grid
+            container
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
           >
-            Submit
-          </button>
-        </form>
+            <Grid size={8}>
+              <FormControl fullWidth>
+                <InputLabel id="Distance-Select-label">Distance</InputLabel>
+                <Select
+                  autoWidth
+                  labelId="dDistance-Select-label"
+                  id="demo-simple-select"
+                  value={inputRadius}
+                  label="Distance"
+                  onChange={(e) => setInputRadius(e.target.value)}
+                >
+                  <MenuItem value={5}>Five(5)</MenuItem>
+                  <MenuItem value={10}>Ten(10)</MenuItem>
+                  <MenuItem value={15}>Fifteen(15)</MenuItem>
+                  <MenuItem value={20}>Twenty(20)</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid
+              item
+              xs={4}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  searchMarkets();
+                }}
+                style={{
+                  height: 55,
+                  width: 100,
+                  backgroundColor: " #282c34",
+                  color: "white",
+                }}
+              >
+                Submit
+              </button>
+            </Grid>
+          </Grid>
+        </div>
       </div>
 
-      <h1>{name}</h1>
-      <h1>{link}</h1>
-      <h1>{address}</h1>
-      <h1>{phone}</h1>
-
-      <ul>
-        {farmers.map((item, id) => (
-          <div key={id}>
-            <h1>{item.listing_name}</h1>
-            <h1>{item.media_website}</h1>
-            <h1>{item.location_address}</h1>
-            <h1>{item.contact_phone}</h1>
-          </div>
-        ))}
-      </ul>
+      <FixedSizeList
+        height={400}
+        fullWidth
+        itemSize={75}
+        itemCount={farmers.length}
+        overscanCount={5}
+      >
+        {renderRow}
+      </FixedSizeList>
     </div>
   );
+
+  function renderRow(props) {
+    const { index, style } = props;
+
+    return (
+      <ListItem
+        style={style}
+        key={index}
+        component="div"
+        disablePadding
+        divider
+      >
+        <ListItemButton alignItems="center">
+          <ListItemText primary={`${farmers[index].listing_name}`} />
+          <ListItemText secondary={`${farmers[index].location_address}`} />
+          <Stack>
+            <ListItemText secondary={`${farmers[index].media_website}`} />
+            <ListItemText secondary={`${farmers[index].contact_phone}`} />
+          </Stack>
+        </ListItemButton>
+      </ListItem>
+    );
+  }
 }

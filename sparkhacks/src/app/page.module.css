@@ -13,6 +13,7 @@
   background-color: #e0d2c3;
 }
 
+
 .main {
   display: table;
   table-layout: fixed;
@@ -469,3 +470,4 @@ a.secondary {
 .Weather input:not(:checked) + span {
   background: rebeccapurple;
 }
+
