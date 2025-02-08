@@ -94,7 +94,7 @@ export default function PlantInventory() {
       <h1>Plant Inventory</h1>
       <form>
         <div className={styles.span2}>
-          <label>Name Of Plant</label>
+          <label>Plant Name</label>
           <input
             value={newItem.name}
             onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
@@ -125,7 +125,7 @@ export default function PlantInventory() {
           />
         </div>
         <div className={styles.span2}>
-          <label>Date Of Last Harvest</label>
+          <label>Last Harvest</label>
           <input
             value={newItem.lastHarvested}
             onChange={(e) =>
@@ -136,7 +136,7 @@ export default function PlantInventory() {
           />
         </div>
         <div className={styles.span2}>
-          <label className={styles.smallText}>Last Harvest Yield</label>
+          <label className={styles.smallText}>Last Yield</label>
           <input
             value={newItem.lastHarvestYield}
             onChange={(e) =>
