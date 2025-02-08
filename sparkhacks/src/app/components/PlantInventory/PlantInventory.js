@@ -11,7 +11,8 @@ import {
 import { db } from "../../firebase";
 import InfoCard from "./InfoCard";
 import styles from "../../page.module.css";
-
+import IconButton from "@mui/material/IconButton";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 export default function PlantInventory() {
   const [items, setItems] = useState([]);
@@ -92,7 +93,6 @@ export default function PlantInventory() {
 
   return (
     <div className={styles.PlantInventory}>
-      
       <h1>Plant Inventory</h1>
       <form>
         <div className={styles.span2}>
@@ -151,9 +151,15 @@ export default function PlantInventory() {
             className={styles.span2}
           />
         </div>
-        <button onClick={addItem} type="submit">
-          Add
-        </button>
+        <IconButton
+          onClick={addItem}
+          type="submit"
+          color="white"
+          aria-label="add to shopping cart"
+          size="small"
+        >
+          <AddShoppingCartIcon fontSize="small" />
+        </IconButton>
       </form>
       <input
         value={search}
@@ -162,7 +168,7 @@ export default function PlantInventory() {
         placeholder="Search..."
         className={styles.search}
       ></input>
-      
+
       <div className={styles.scrollContainer}>
         <ul>
           {filtered.map((item, id) => (
