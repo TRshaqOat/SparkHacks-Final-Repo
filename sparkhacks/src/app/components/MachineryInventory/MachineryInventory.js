@@ -237,6 +237,7 @@ export default function MachineryInventory() {
             }}
             style={{
               height: "3rem",
+              width: "3.5rem",
               marginTop: 0,
             }}
           >
