@@ -72,7 +72,7 @@ export default function PlantInventory() {
         datePlanted: "",
       });
     } else {
-      alert("NOT ADDED");
+      alert("NOT ADDED - All fields not filled in correctly or wrong input.");
     }
   };
 
