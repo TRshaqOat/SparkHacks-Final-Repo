@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import PlantInventory from "./components/PlantInventory/PlantInventory";
 import MachineryInventory from "./components/MachineryInventory/MachineryInventory";
 import Weather from "./components/Weather/Weather";
+import Banner from "./components/PlantInventory/PlantInventory"
 
 export default function Home() {
   return (

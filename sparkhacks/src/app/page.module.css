@@ -9,21 +9,10 @@
   display: grid;
   min-height: 100svh;
   font-family: var(--font-geist-sans);
+  font-family: var(--font-geist-sans);
+  background-color: #e0d2c3;
 }
 
-.title-banner {
-  width: 100%;
-  background-color: #4a4a4a;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px;
-  font-size: 28px;
-  font-weight: 700;
-  border-bottom: 4px solid #333;
-  display: block;
-
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 .main {
   display: table;
@@ -186,6 +175,25 @@ a.secondary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
   Plant Inventory
  */
@@ -201,7 +209,7 @@ a.secondary {
   text-align: center;
   font-size: 16pt; 
 
-  background-color: rgba(88, 178, 91, 0.392);
+  background-color: #A3B18A;
   border-radius: 20px;
   /* Not able to get border to show??*/
 
@@ -235,17 +243,9 @@ a.secondary {
   border-radius: 10px;
   border-width: 5px;
   border-color: black;
+  background-color: #03421d9d;
 }
 
-<<<<<<< Updated upstream
-.PlantInventory .scrollContainer{ /* Padding around the inside of each Quadrent */
-  height: 30vh;
-  overflow-y: scroll;
-  border-radius: 10px;
-  background-color: rgba(4, 74, 117, 0.655);
-  padding: 10px;
-
-=======
 .PlantInventory .scrollContainer{ /* Padding around the inside of table of cells */
   height: 25vh;
   overflow-y: scroll;
@@ -253,23 +253,23 @@ a.secondary {
   background-color: rgba(4, 74, 117, 0.655);
   background-color: #F5F5DC;
   
->>>>>>> Stashed changes
 }
 
 .PlantInventory .span2 { /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
   text-align: center;
 }
-
+fer 
 .PlantInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 3;
+  background-color: #03421d9d;
 }
 
 .InfoCard .span2 { /* Inside of Cells */
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
-  background-color: pink;
+  background-color: rgb(192, 238, 255);
   text-wrap:balance;
 
   
@@ -287,7 +287,7 @@ a.secondary {
 }
 
 .InfoCard .delete { /* Delete Button*/
-  background-color:#344e4168;
+  background-color:#547c68;
   height: 2.5em;
   width: 5em;
   display: flex;
@@ -309,10 +309,33 @@ a.secondary {
   width: 100%;
   height: 100%;
   border: 2px solid black;
+  background-color:#344e41;
   display:flex;
   align-items: center;
   justify-content: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -367,14 +390,14 @@ a.secondary {
   border-radius: 10px;
   border-width: 5px;
   border-color: black;
-  background-color: orange;
+  background-color: #03421d9d;
 }
 
 .MachineryInventory .scrollContainer{ /* Padding around the inside of each Quadrent */
   height: 30vh;
   overflow-y: scroll;
   border-radius: 10px;
-  background-color: rgba(4, 74, 117, 0.655);
+  background-color: #F5F5DC;
   padding: 10px;
 
 }
@@ -393,7 +416,7 @@ a.secondary {
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
-  background-color: pink; /*PINK HERE*/
+  background-color: rgba(173, 218, 227, 0.778); /*PINK HERE*/
 }
 
 .MachineryInventory .InfoCard{ /* Background of Each row */
@@ -407,7 +430,7 @@ a.secondary {
 }
 
 .MachineryInventory .InfoCard .delete { /* Delete Button*/
-  background-color:#979797;
+  background-color:#547c68;
   height: 2.5em;
   width: 5em;
   display: flex;
