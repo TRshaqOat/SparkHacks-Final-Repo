@@ -180,7 +180,16 @@ export default function MachineryInventory() {
             className={styles.span2}
           />
         </div>
-        <button onClick={addItem} type="submit">
+        <button
+          onClick={addItem}
+          type="submit"
+          style={{
+            height: "2.5rem",
+            width: "3rem",
+            marginLeft: 0,
+            marginBottom: 5,
+          }}
+        >
           Add
         </button>
       </form>
