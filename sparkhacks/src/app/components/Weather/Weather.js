@@ -21,6 +21,8 @@ export default function Weather(props) {
       precipitation: [],
       soilTemperature0cm: [],
       soilTemperature18cm: [],
+      soilMoisture0To1cm: [],
+      soilMoisture9To27cm: [],
     },
   });
 
@@ -54,7 +56,7 @@ export default function Weather(props) {
     }
   }, [weatherData]);
 
-  const series = [
+  var series = [
     {
       type: "bar",
       yAxisId: "percipitatoin",
@@ -85,6 +87,33 @@ export default function Weather(props) {
       label: "Soil Temperature-18cm (°F)",
       color: "#543d30",
       data: weatherData.hourly.soilTemperature18cm,
+      highlightScope: { highlight: "item" },
+    },
+
+    {
+      type: "line",
+      yAxisId: "moisture",
+      label: "Soil Moisture-0to1cm (m³/m³)",
+      color: "#47ba5a",
+      data: weatherData.hourly.soilMoisture0To1cm,
+      highlightScope: { highlight: "item" },
+    },
+
+    {
+      type: "line",
+      yAxisId: "moisture",
+      label: "Soil Moisture-9to27cm (m³/m³)",
+      color: "#194521",
+      data: weatherData.hourly.soilMoisture9To27cm,
+      highlightScope: { highlight: "item" },
+    },
+
+    {
+      type: "line",
+      yAxisId: "moisture",
+      label: "Relative Humidity-2m (%)",
+      color: "#0a7694",
+      data: weatherData.hourly.soilMoisture9To27cm,
       highlightScope: { highlight: "item" },
     },
   ];
@@ -128,7 +157,7 @@ export default function Weather(props) {
                 `${(value / 1000000).toLocaleString()}M`,
             },
             {
-              id: "soilTemp",
+              id: "moisture",
               scaleType: "linear",
             },
           ]}
@@ -160,13 +189,13 @@ export default function Weather(props) {
             }}
           />
           <ChartsYAxis
-            label="Soil Temperature (°C)"
+            label="Moisture (% or m³/m³)"
             position="right"
-            axisId="soilTemp"
-            tickLabelStyle={{ fontSize: 10 }}
+            axisId="moisture"
+            tickLabelStyle={{ fontSize: 7 }}
             sx={{
               [`& .${axisClasses.label}`]: {
-                transform: "translateX(5px)",
+                transform: "translateX(12px)",
               },
             }}
           />
