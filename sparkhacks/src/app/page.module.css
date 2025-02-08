@@ -9,21 +9,10 @@
   display: grid;
   min-height: 100svh;
   font-family: var(--font-geist-sans);
+  font-family: var(--font-geist-sans);
+  background-color: #e0d2c3;
 }
 
-.title-banner {
-  width: 100%;
-  background-color: #4a4a4a;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px;
-  font-size: 28px;
-  font-weight: 700;
-  border-bottom: 4px solid #333;
-  display: block;
-
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 .main {
   display: table;
@@ -189,7 +178,7 @@ a.secondary {
   text-align: center;
   font-size: 16pt;
 
-  background-color: rgba(88, 178, 91, 0.392);
+  background-color: #A3B18A;
   border-radius: 20px;
   /* Not able to get border to show??*/
 }
@@ -237,11 +226,22 @@ a.secondary {
   /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
   text-align: center;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
 
 .PlantInventory .span3 {
   /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 3;
+  background-color: #03421d9d;
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+}
+
+.PlantInventory .test{
+  font-size: small;
 }
 
 .InfoCard .span2 {
@@ -249,6 +249,13 @@ a.secondary {
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  background-color: rgb(192, 238, 255);
+=======
+  background-color: pink;
+>>>>>>> Stashed changes
+=======
   background-color: pink;
   text-wrap: balance;
 }
@@ -343,7 +350,7 @@ a.secondary {
   border-radius: 10px;
   border-width: 5px;
   border-color: black;
-  background-color: orange;
+  background-color: #03421d9d;
 }
 
 .MachineryInventory .scrollContainer {
@@ -351,7 +358,7 @@ a.secondary {
   height: 30vh;
   overflow-y: scroll;
   border-radius: 10px;
-  background-color: rgba(4, 74, 117, 0.655);
+  background-color: #F5F5DC;
   padding: 10px;
 }
 
@@ -370,7 +377,7 @@ a.secondary {
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
-  background-color: pink; /*PINK HERE*/
+  background-color: rgba(173, 218, 227, 0.778); /*PINK HERE*/
 }
 
 .MachineryInventory .InfoCard {

@@ -15,6 +15,7 @@
     "@mui/x-charts": "^7.26.0",
     "axios": "^1.7.9",
     "firebase": "^11.3.0",
+    "material-icons": "^1.13.13",
     "next": "15.1.6",
     "ol": "^10.4.0",
     "openmeteo": "^1.1.4",
