@@ -137,7 +137,12 @@ export default function PlantAPI() {
         disablePadding
         divider
       >
-        <ListItemButton alignItems="center">
+        <ListItemButton
+          alignItems="center"
+          href={farmers[index].media_website}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <ListItemText primary={`${farmers[index].listing_name}`} />
           <ListItemText secondary={`${farmers[index].location_address}`} />
           <Stack>
