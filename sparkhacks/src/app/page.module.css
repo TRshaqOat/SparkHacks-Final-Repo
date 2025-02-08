@@ -243,7 +243,10 @@ a.secondary {
   border-radius: 10px;
   border-width: 5px;
   border-color: black;
+<<<<<<< Updated upstream
   background-color: #03421d9d;
+=======
+>>>>>>> Stashed changes
 }
 
 .PlantInventory .scrollContainer{ /* Padding around the inside of table of cells */
@@ -258,18 +261,25 @@ a.secondary {
 .PlantInventory .span2 { /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
   text-align: center;
+<<<<<<< Updated upstream
 }
 fer 
 .PlantInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 3;
   background-color: #03421d9d;
+=======
+>>>>>>> Stashed changes
 }
 
 .InfoCard .span2 { /* Inside of Cells */
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
+<<<<<<< Updated upstream
   background-color: rgb(192, 238, 255);
+=======
+  background-color: pink;
+>>>>>>> Stashed changes
   text-wrap:balance;
 
   
@@ -287,7 +297,11 @@ fer
 }
 
 .InfoCard .delete { /* Delete Button*/
+<<<<<<< Updated upstream
   background-color:#547c68;
+=======
+  background-color:#344e4168;
+>>>>>>> Stashed changes
   height: 2.5em;
   width: 5em;
   display: flex;
