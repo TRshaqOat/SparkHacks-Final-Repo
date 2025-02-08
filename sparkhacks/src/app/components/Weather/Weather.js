@@ -26,13 +26,13 @@ export default function Weather(props) {
       relativeHumidity2m: [],
     },
   });
-  const [temperatureView, setTemperatureView] = useState(true);
+  const [temperatureView, setTemperatureView] = useState(false);
   const [precipitationView, setPrecipitationView] = useState(false);
   const [soilTemperature0cmView, setSoilTemperature0cmView] = useState(false);
   const [soilTemperature18cmView, setSoilTemperature18cmView] = useState(false);
   const [soilMoisture0To1cmView, setSoilMoisture0To1cmView] = useState(false);
   const [soilMoisture9To27cmView, setSoilMoisture9To27cmView] = useState(false);
-  const [relativeHumidity2mView, setRelativeHumidity2mView] = useState(true);
+  const [relativeHumidity2mView, setRelativeHumidity2mView] = useState(false);
 
   useEffect(() => {
     const fetchWeatherData = async (lat, long) => {
@@ -44,6 +44,16 @@ export default function Weather(props) {
       }
     };
 
+    const fetchCSV = async () => {
+      const response = await fetch("/path/to/open-meteo-52.52N13.42E38m.csv");
+      const reader = response.body.getReader();
+      const result = await reader.read(); // raw array
+      const decoder = new TextDecoder("utf-8");
+      const csv = decoder.decode(result.value); // the csv text
+      const results = Papa.parse(csv, { header: true });
+      setWeatherData(results.data);
+    };
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -53,7 +63,7 @@ export default function Weather(props) {
             latitude: lat,
             longitude: long,
           });
-          fetchWeatherData(lat, long);
+          // fetchWeatherData(lat, long);
         },
         (error) => {
           console.error("Error getting location:", error);
@@ -62,6 +72,7 @@ export default function Weather(props) {
     } else {
       console.error("Geolocation is not supported by this browser.");
     }
+    fetchCSV();
   });
 
   const tempSeries = {
@@ -121,9 +132,9 @@ export default function Weather(props) {
   const moistureSeries = {
     type: "line",
     yAxisId: "moisture",
-    label: "Relative Humidity-2m (%)",
+    label: "Relative Humidity-2m (%) scaled by .25",
     color: "#0a7694",
-    data: weatherData.hourly.relativeHumidity2m,
+    data: weatherData.hourly.relativeHumidity2m.map((e) => e / 250),
     highlightScope: { highlight: "item" },
   };
 
@@ -190,8 +201,6 @@ export default function Weather(props) {
           Humidity
         </button>
       </form>
-      <h2>{location.longitude}</h2>
-      <h2>{location.latitude}</h2>
       {weatherData.hourly.time.length > 0 ? (
         <ResponsiveChartContainer
           series={[
