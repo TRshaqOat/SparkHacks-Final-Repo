@@ -43,7 +43,8 @@
   padding: 10px;
   margin: 50px;
   border-width: 5px;
-  border-color: rgba(0, 127, 141, 0.305);
+  /*  border-color: rgba(0, 127, 141, 0.305); */
+  border-color: #344E41;
 }
 
 .row{
@@ -211,7 +212,7 @@ a.secondary {
   height: 3em;
   width: 100%;
 
-  background-color: rgb(22, 22, 22);
+  background-color: #282c34;
   border-radius: 15px;
   border-radius: 5px;
   border-color: rgb(162, 162, 162);
@@ -225,8 +226,7 @@ a.secondary {
   opacity: 100%;
   margin-top: 2em;
   margin-bottom: 5px;
-  border-radius: 10px;
-
+  border-radius: 15px;
   /* height: 3em; */
 }
 
@@ -236,6 +236,7 @@ a.secondary {
   border-radius: 10px;
   border-width: 5px;
   border-color: black;
+  background-color: orange;
 }
 
 .PlantInventory .scrollContainer{ /* Padding around the inside of each Quadrent */
@@ -243,6 +244,7 @@ a.secondary {
   overflow-y: scroll;
   border-radius: 10px;
   background-color: rgba(4, 74, 117, 0.655);
+  
 }
 
 .PlantInventory .span2 { /*inside of each box in form (name, acres, dates, etc) */
