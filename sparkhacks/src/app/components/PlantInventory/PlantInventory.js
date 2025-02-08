@@ -110,7 +110,7 @@ export default function PlantInventory() {
               setNewItem({ ...newItem, acresPlanted: e.target.value })
             }
             type="number"
-            placeholder="Enter numbedr of acres plante"
+            placeholder="Enter # of Acres Planted"
           />
         </div>
         <div className={styles.span2}>
@@ -125,7 +125,7 @@ export default function PlantInventory() {
           />
         </div>
         <div className={styles.span2}>
-          <label>Last Harve.st Date</label>
+          <label>Date Of Last Harvest</label>
           <input
             value={newItem.lastHarvested}
             onChange={(e) =>
