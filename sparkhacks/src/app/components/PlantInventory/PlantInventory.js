@@ -14,6 +14,11 @@ import styles from "../../page.module.css";
 import IconButton from "@mui/material/IconButton";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { FixedSizeList } from "react-window";
+
 export default function PlantInventory() {
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState({
@@ -163,21 +168,49 @@ export default function PlantInventory() {
         className={styles.search}
       ></input>
 
-      <div className={styles.scrollContainer}>
-        <ul>
-          {filtered.map((item, id) => (
-            <InfoCard
-              key={item.id}
-              name={item.name}
-              acresPlanted={item.acresPlanted}
-              datePlanted={item.datePlanted}
-              lastHarvestDate={item.lastHarvested}
-              lastHarvestYield={item.lastHarvestYield}
-              onClick={() => deleteItem(item.id)}
-            />
-          ))}
-        </ul>
-      </div>
+      <FixedSizeList
+        height={400}
+        fullWidth
+        itemSize={75}
+        itemCount={filtered.length}
+        overscanCount={5}
+      >
+        {renderRow}
+      </FixedSizeList>
     </div>
   );
+
+  function renderRow(props) {
+    const { index, style } = props;
+
+    return (
+      <ListItem
+        style={style}
+        key={index}
+        component="div"
+        alignItems="flex-start"
+        divider
+      >
+        <ListItemButton alignItems="center">
+          <ListItemText primary={`${filtered[index].name}`} />
+          <ListItemText secondary={`${filtered[index].acresPlanted}`} />
+          <ListItemText secondary={`${filtered[index].datePlanted}`} />
+          <ListItemText secondary={`${filtered[index].lastHarvested}`} />
+          <ListItemText secondary={`${filtered[index].lastHarvestYield}`} />
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              deleteItem(filtered[index].id);
+            }}
+            style={{
+              height: "3rem",
+              marginTop: 0,
+            }}
+          >
+            Delete
+          </button>
+        </ListItemButton>
+      </ListItem>
+    );
+  }
 }

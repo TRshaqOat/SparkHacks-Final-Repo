@@ -222,6 +222,18 @@ export default function MachineryInventory() {
           <ListItemText secondary={`${filtered[index].price}`} />
           <ListItemText secondary={`${filtered[index].lastMaintenance}`} />
           <ListItemText secondary={`${filtered[index].registered}`} />
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              deleteItem(filtered[index].id);
+            }}
+            style={{
+              height: "3rem",
+              marginTop: 0,
+            }}
+          >
+            Delete
+          </button>
         </ListItemButton>
       </ListItem>
     );
