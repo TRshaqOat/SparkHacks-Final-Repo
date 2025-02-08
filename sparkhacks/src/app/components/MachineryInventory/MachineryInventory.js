@@ -64,6 +64,15 @@ export default function MachineryInventory() {
         lastMaintenance: newItem.lastMaintenance,
         registered: newItem.registered,
       });
+      setNewItem({
+        name: "",
+        make: "",
+        model: "",
+        modelYear: "",
+        price: "",
+        lastMaintenance: "",
+        registered: "",
+      });
     } else {
       alert("NOT ADDED");
     }
@@ -90,7 +99,7 @@ export default function MachineryInventory() {
   };
 
   return (
-    <div className={styles.PlantInventory}>
+    <div className={styles.MachineryInventory}>
       <h1>Machinery Inventory</h1>
       <form>
         <div className={styles.span2}>
@@ -121,7 +130,7 @@ export default function MachineryInventory() {
           />
         </div>
         <div className={styles.span2}>
-          <label className={styles.smallText}>Model Year</label>
+          <label className={styles.smallText}>Year</label>
           <input
             value={newItem.modelYear}
             onChange={(e) =>
@@ -141,8 +150,8 @@ export default function MachineryInventory() {
             placeholder="Enter price of machinery "
           />
         </div>
-        <div className={styles.span3}>
-          <label className={styles.smallText}>Last Maintenance</label>
+        <div className={styles.span2}>
+          <label className={styles.smallText}>Repairs</label>
           <input
             value={newItem.lastMaintenance}
             onChange={(e) =>
@@ -154,7 +163,7 @@ export default function MachineryInventory() {
           />
         </div>
         <div className={styles.span2}>
-          <label className={styles.smallText}>Registration</label>
+          <label className={styles.smallText}>Registered</label>
           <input
             value={newItem.registered}
             onChange={(e) =>
