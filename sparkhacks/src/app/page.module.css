@@ -172,25 +172,24 @@ a.secondary {
   column-gap: 7px;
   grid-template-columns: repeat(11, 1fr);
   width: 100%;
-
   margin-bottom: 5px;
   text-align: center;
-  font-size: 16pt;
-
+  font-size: 14pt;
+  align-items: center;
   background-color: #a3b18a;
-  border-radius: 20px;
-  /* Not able to get border to show??*/
+  border-radius: 25px;
 }
 
 .PlantInventory input {
   /* Input Fields */
   /* border: 2px solid blue; */
+  margin-top: 5px;
+  margin-left: 10px;
   height: 3em;
   width: 100%;
 
   background-color: #282c34;
   border-radius: 15px;
-  border-radius: 5px;
   border-color: rgb(162, 162, 162);
   text-align: center;
 }
@@ -208,7 +207,7 @@ a.secondary {
 .PlantInventory .search {
   margin-bottom: 5px;
   border-radius: 10px;
-  border-width: 5px;
+  border-width: 2px;
   border-color: black;
 }
 
@@ -296,7 +295,7 @@ a.secondary {
   /* Form Area */
   /* border: 2px solid red; */
   display: grid;
-  column-gap: 5px;
+  column-gap: 7px;
   grid-template-columns: repeat(15, 1fr);
   width: 100%;
 
