@@ -20,6 +20,8 @@
   font-size: 24px;
   font-weight: bold;
   border-bottom: 4px solid #222;
+  display: block;
+
 }
 
 .main {
@@ -61,7 +63,7 @@
 
 .main code {
   font-family: inherit;
-  background: var(--offwhite);
+  background: #e0d6af;
   padding: 2px 4px;
   border-radius: 4px;
   font-weight: 600;
