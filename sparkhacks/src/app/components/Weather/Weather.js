@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import getData from "./data";
+import Papa from "papaparse";
 
 import Typography from "@mui/material/Typography";
 import { BarPlot } from "@mui/x-charts/BarChart";
@@ -11,9 +12,11 @@ import { ChartsYAxis } from "@mui/x-charts/ChartsYAxis";
 import { ChartsTooltip } from "@mui/x-charts/ChartsTooltip";
 import { ChartsAxisHighlight } from "@mui/x-charts/ChartsAxisHighlight";
 import { axisClasses } from "@mui/x-charts/ChartsAxis";
+import { fallbackModeToStaticPathsResult } from "next/dist/lib/fallback";
 
 export default function Weather(props) {
   const [location, setLocation] = useState({});
+  const [csvData, setCsvData] = useState();
   const [weatherData, setWeatherData] = useState({
     hourly: {
       time: [],
@@ -45,13 +48,14 @@ export default function Weather(props) {
     };
 
     const fetchCSV = async () => {
-      const response = await fetch("/path/to/open-meteo-52.52N13.42E38m.csv");
+      const response = await fetch("open-meteo.csv");
       const reader = response.body.getReader();
       const result = await reader.read(); // raw array
       const decoder = new TextDecoder("utf-8");
       const csv = decoder.decode(result.value); // the csv text
       const results = Papa.parse(csv, { header: true });
-      setWeatherData(results.data);
+      console.log(results);
+      setCsvData(results.data);
     };
 
     if (navigator.geolocation) {
@@ -63,7 +67,7 @@ export default function Weather(props) {
             latitude: lat,
             longitude: long,
           });
-          // fetchWeatherData(lat, long);
+          fetchWeatherData(lat, long);
         },
         (error) => {
           console.error("Error getting location:", error);
@@ -73,7 +77,7 @@ export default function Weather(props) {
       console.error("Geolocation is not supported by this browser.");
     }
     fetchCSV();
-  });
+  }, []);
 
   const tempSeries = {
     type: "line",
