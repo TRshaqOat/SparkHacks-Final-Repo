@@ -92,6 +92,7 @@ export default function PlantInventory() {
 
   return (
     <div className={styles.PlantInventory}>
+      
       <h1>Plant Inventory</h1>
       <form>
         <div className={styles.span2}>
@@ -146,7 +147,7 @@ export default function PlantInventory() {
             type="number"
             min={0}
             max={100}
-            placeholder="Enter last harvestyield percentage "
+            placeholder="Enter Harvest Yield %"
             className={styles.span2}
           />
         </div>
@@ -161,6 +162,7 @@ export default function PlantInventory() {
         placeholder="Search..."
         className={styles.search}
       ></input>
+      
       <div className={styles.scrollContainer}>
         <ul>
           {filtered.map((item, id) => (
