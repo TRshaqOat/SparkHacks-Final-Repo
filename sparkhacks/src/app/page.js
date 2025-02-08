@@ -10,9 +10,9 @@ import axios from "axios";
 export default function Home() {
   return (
     <div className={styles.page}>
-      <header className={styles.top}>
-        <h1>Farmers's Dashboard</h1>
-      </header>
+      <div className={styles.top}>
+        <h1 className={styles.heading}>Farmers's Dashboard</h1>
+      </div>
       <main className={styles.main}>
         <div className={styles.row}>
           <div className={styles.container}>

@@ -42,7 +42,7 @@ export default function PlantAPI() {
 
   const searchMarkets = async () => {
     setFarmers([]);
-    console.log("CLICKEd");
+    console.log("CLICKED");
     const options = {
       method: "GET",
       url: `https://www.usdalocalfoodportal.com/api/farmersmarket/?apikey=qYztaVCAi1&x=${getX}&y=${getY}&radius=${inputRadius}`,
@@ -141,8 +141,20 @@ export default function PlantAPI() {
           <ListItemText primary={`${farmers[index].listing_name}`} />
           <ListItemText secondary={`${farmers[index].location_address}`} />
           <Stack>
-            <ListItemText secondary={`${farmers[index].media_website}`} />
-            <ListItemText secondary={`${farmers[index].contact_phone}`} />
+            <ListItemText
+              secondary={
+                farmers[index].media_website
+                  ? `${farmers[index].media_website}`
+                  : "No Website Available"
+              }
+            />
+            <ListItemText
+              secondary={
+                farmers[index].contact_phone
+                  ? `${farmers[index].contact_phone}`
+                  : "No Phone Number Available"
+              }
+            />
           </Stack>
         </ListItemButton>
       </ListItem>
