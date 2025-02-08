@@ -10,9 +10,9 @@ export default function InfoCard(props) {
       <h3 className={styles.span2}>{props.datePlanted}</h3>
       <h3 className={styles.span2}>{props.lastHarvestDate}</h3>
       <h2 className={styles.span2}>{props.lastHarvestYield}</h2>
-      <IconButton aria-label="delete" onClick={props.onClick} color="white">
-        <DeleteIcon />
-      </IconButton>
+      <div className={styles.delete} onClick={props.onClick}>
+        Delete
+      </div>
     </div>
   );
 }
