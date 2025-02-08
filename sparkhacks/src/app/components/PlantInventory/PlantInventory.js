@@ -145,7 +145,7 @@ export default function PlantInventory() {
             type="number"
             min={0}
             max={100}
-            placeholder="Enter last harvestyield percentage "
+            placeholder="Enter Harvest Yield %"
             className={styles.span2}
           />
         </div>

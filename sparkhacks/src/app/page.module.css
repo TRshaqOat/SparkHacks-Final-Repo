@@ -193,7 +193,7 @@ a.secondary {
 .PlantInventory form{ /* Form Area */
   /* border: 2px solid red; */
   display: grid;
-  column-gap: 5px;
+  column-gap: 7px;
   grid-template-columns: repeat(11, 1fr);
   width: 100%;
 
@@ -232,13 +232,12 @@ a.secondary {
 
 .PlantInventory .search {
   margin-bottom: 5px;
-
   border-radius: 10px;
   border-width: 5px;
   border-color: black;
-  background-color: orange;
 }
 
+<<<<<<< Updated upstream
 .PlantInventory .scrollContainer{ /* Padding around the inside of each Quadrent */
   height: 30vh;
   overflow-y: scroll;
@@ -246,10 +245,20 @@ a.secondary {
   background-color: rgba(4, 74, 117, 0.655);
   padding: 10px;
 
+=======
+.PlantInventory .scrollContainer{ /* Padding around the inside of table of cells */
+  height: 25vh;
+  overflow-y: scroll;
+  border-radius: 10px;
+  background-color: rgba(4, 74, 117, 0.655);
+  background-color: #F5F5DC;
+  
+>>>>>>> Stashed changes
 }
 
 .PlantInventory .span2 { /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
+  text-align: center;
 }
 
 .PlantInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
@@ -260,7 +269,10 @@ a.secondary {
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
-  background-color: pink; /*PINK HERE*/
+  background-color: pink;
+  text-wrap:balance;
+
+  
 }
 
 .InfoCard{ /* Background of Each row */
@@ -271,10 +283,11 @@ a.secondary {
   align-items: center;
   margin-bottom: 7px;
   background-color: rgba(0, 127, 141, 0.305);
+  
 }
 
 .InfoCard .delete { /* Delete Button*/
-  background-color:#979797;
+  background-color:#344e4168;
   height: 2.5em;
   width: 5em;
   display: flex;
