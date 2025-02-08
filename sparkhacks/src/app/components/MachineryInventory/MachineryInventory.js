@@ -187,17 +187,17 @@ export default function MachineryInventory() {
       ></input>
       <div className={styles.scrollContainer}>
         <ul>
-          {filtered.map((item, id) => (
+          {filtered.map((machine, id) => (
             <InfoCard
-              key={item.id}
-              name={item.name}
-              make={item.make}
-              model={item.model}
-              modelYear={item.modelYear}
-              price={item.price}
-              lastMaintenance={item.lastMaintenance}
-              registered={item.registered}
-              onClick={() => deleteItem(item.id)}
+              key={machine.id}
+              name={machine.name}
+              make={machine.make}
+              model={machine.model}
+              modelYear={machine.modelYear}
+              price={machine.price}
+              lastMaintenance={machine.lastMaintenance}
+              registered={machine.registered}
+              onClick={() => deleteItem(machine.id)}
             />
           ))}
         </ul>
