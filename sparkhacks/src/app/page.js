@@ -2,7 +2,7 @@
 
 import styles from "./page.module.css";
 import PlantInventory from "./components/PlantInventory/PlantInventory";
-import PlantAPI from "./components/PlantInformation/PlantAPI";
+import MarketAPI from "./components/MarketInformation/MarketAPI";
 import MachineryInventory from "./components/MachineryInventory/MachineryInventory";
 import Weather from "./components/Weather/Weather";
 import axios from "axios";
@@ -19,7 +19,7 @@ export default function Home() {
             <Weather></Weather>
           </div>
           <div className={styles.container}>
-            <PlantAPI></PlantAPI>
+            <MarketAPI></MarketAPI>
           </div>
         </div>
         <div className={styles.row}>

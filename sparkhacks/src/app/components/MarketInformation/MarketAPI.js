@@ -15,7 +15,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { FixedSizeList } from "react-window";
 import { Stack } from "@mui/material";
 
-export default function PlantAPI() {
+export default function MarketAPI() {
   const [farmers, setFarmers] = useState([]);
 
   const [inputRadius, setInputRadius] = useState(0);
