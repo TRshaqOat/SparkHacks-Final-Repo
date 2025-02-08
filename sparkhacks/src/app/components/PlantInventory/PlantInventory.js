@@ -120,10 +120,11 @@ export default function PlantInventory() {
       <ul>
         {items.map((item, id) => (
           <InfoCard
-            key={id}
+            key={item.id}
             name={item.name}
             lastHarvestDate={item.lastHarvested}
             datePlanted={item.datePlanted}
+            onClick={() => deleteItem(item.id)}
           />
         ))}
       </ul>
