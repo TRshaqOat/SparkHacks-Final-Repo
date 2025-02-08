@@ -211,13 +211,22 @@ a.secondary {
   border-color: black;
 }
 
+<<<<<<< Updated upstream
 .PlantInventory .scrollContainer {
   /* Padding around the inside of table of cells */
+=======
+.PlantInventory .scrollContainer{ /* Padding around the inside of table of cells */
+>>>>>>> Stashed changes
   height: 25vh;
   overflow-y: scroll;
   border-radius: 10px;
   background-color: rgba(4, 74, 117, 0.655);
+<<<<<<< Updated upstream
   background-color: #f5f5dc;
+=======
+  background-color: #F5F5DC;
+  
+>>>>>>> Stashed changes
 }
 
 .PlantInventory .span2 {
@@ -241,9 +250,16 @@ a.secondary {
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
+<<<<<<< Updated upstream
   background-color: rgb(192, 238, 255);
   background-color: pink;
   text-wrap: balance;
+=======
+  background-color: pink;
+  text-wrap:balance;
+
+  
+>>>>>>> Stashed changes
 }
 
 .InfoCard {
@@ -255,11 +271,17 @@ a.secondary {
   align-items: center;
   margin-bottom: 7px;
   background-color: rgba(0, 127, 141, 0.305);
+  
 }
 
+<<<<<<< Updated upstream
 .InfoCard .delete {
   /* Delete Button*/
   background-color: #344e4168;
+=======
+.InfoCard .delete { /* Delete Button*/
+  background-color:#344e4168;
+>>>>>>> Stashed changes
   height: 2.5em;
   width: 5em;
   display: flex;
