@@ -15,7 +15,13 @@ import { axisClasses } from "@mui/x-charts/ChartsAxis";
 export default function Weather(props) {
   const [location, setLocation] = useState({});
   const [weatherData, setWeatherData] = useState({
-    hourly: { time: [], temperature2m: [] },
+    hourly: {
+      time: [],
+      temperature2m: [],
+      precipitation: [],
+      soilTemperature0cm: [],
+      soilTemperature18cm: [],
+    },
   });
 
   useEffect(() => {
@@ -48,37 +54,46 @@ export default function Weather(props) {
     }
   }, [weatherData]);
 
-  var series = [
-    // {
-    //   type: 'bar',
-    //   yAxisId: 'percipitatoin',
-    //   label: 'Volume',
-    //   color: 'lightgray',
-    //   data: alphabetStock.map((day) => day.volume),
-    //   highlightScope: { highlight: 'item' },
-    // },
+  const series = [
+    {
+      type: "bar",
+      yAxisId: "percipitatoin",
+      label: "Percipitation mm (inch)",
+      color: "blue",
+      data: weatherData.hourly.precipitation,
+      highlightScope: { highlight: "item" },
+    },
     {
       type: "line",
       yAxisId: "temperature",
       color: "red",
-      label: "Temperature",
+      label: "Temperature (°F)",
       data: weatherData.hourly.temperature2m,
       highlightScope: { highlight: "item" },
     },
-    // {
-    //   type: 'line',
-    //   yAxisId: 'price',
-    //   color: 'green',
-    //   label: 'High',
-    //   data: alphabetStock.map((day) => day.high),
-    // },
+    {
+      type: "line",
+      yAxisId: "temperature",
+      label: "Soil Temperature-0cm (°F)",
+      color: "#9c755f",
+      data: weatherData.hourly.soilTemperature0cm,
+      highlightScope: { highlight: "item" },
+    },
+    {
+      type: "line",
+      yAxisId: "temperature",
+      label: "Soil Temperature-18cm (°F)",
+      color: "#543d30",
+      data: weatherData.hourly.soilTemperature18cm,
+      highlightScope: { highlight: "item" },
+    },
   ];
 
   const dates = weatherData.hourly.time.map((day) => new Date(day));
 
   return (
     <div>
-      <h1>Weather</h1>
+      <h1 onClick={console.log(weatherData)}>Weather</h1>
       <h2>{location.longitude}</h2>
       <h2>{location.latitude}</h2>
       {weatherData.hourly.time.length > 0 ? (
@@ -106,10 +121,20 @@ export default function Weather(props) {
               id: "temperature",
               scaleType: "linear",
             },
+            {
+              id: "percipitatoin",
+              scaleType: "linear",
+              valueFormatter: (value) =>
+                `${(value / 1000000).toLocaleString()}M`,
+            },
+            {
+              id: "soilTemp",
+              scaleType: "linear",
+            },
           ]}
         >
           <ChartsAxisHighlight x="line" />
-          {/* <BarPlot /> */}
+          <BarPlot />
           <LinePlot />
           <LineHighlightPlot />
           <ChartsXAxis
@@ -134,17 +159,17 @@ export default function Weather(props) {
               },
             }}
           />
-          {/* <ChartsYAxis
-          label="Volume"
-          position="right"
-          axisId="volume"
-          tickLabelStyle={{ fontSize: 10 }}
-          sx={{
-            [`& .${axisClasses.label}`]: {
-              transform: "translateX(5px)",
-            },
-          }}
-        /> */}
+          <ChartsYAxis
+            label="Soil Temperature (°C)"
+            position="right"
+            axisId="soilTemp"
+            tickLabelStyle={{ fontSize: 10 }}
+            sx={{
+              [`& .${axisClasses.label}`]: {
+                transform: "translateX(5px)",
+              },
+            }}
+          />
           <ChartsTooltip />
         </ResponsiveChartContainer>
       ) : (
