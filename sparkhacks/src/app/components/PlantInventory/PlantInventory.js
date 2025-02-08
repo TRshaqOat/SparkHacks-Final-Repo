@@ -22,6 +22,9 @@ export default function PlantInventory() {
     datePlanted: "",
   });
 
+  const [search, setSearch] = useState("");
+  const [filtered, setFiltered] = useState([]);
+
   //Read Items from database
   useEffect(() => {
     var q = query(collection(db, "plantsInventory"));
@@ -31,6 +34,7 @@ export default function PlantInventory() {
         itemsArr.push({ ...doc.data(), id: doc.id });
       });
       setItems(itemsArr);
+      setFiltered(itemsArr);
     });
   }, []);
 
@@ -53,13 +57,13 @@ export default function PlantInventory() {
         lastHarvestYield: newItem.lastHarvestYield,
         datePlanted: newItem.datePlanted,
       });
-      setNewItem({
-        name: "",
-        acresPlanted: "",
-        lastHarvested: "",
-        lastHarvestYield: "",
-        datePlanted: "",
-      });
+      // setNewItem({
+      //   name: "",
+      //   acresPlanted: "",
+      //   lastHarvested: "",
+      //   lastHarvestYield: "",
+      //   datePlanted: "",
+      // });
     } else {
       alert("NOT ADDED");
     }
@@ -70,69 +74,107 @@ export default function PlantInventory() {
     await deleteDoc(doc(db, "plantsInventory", id));
   };
 
+  const updateSearch = (e) => {
+    setSearch(e.target.value);
+    const s = e.target.value;
+
+    setFiltered(
+      items.filter((el) => {
+        if (s === "") {
+          return el;
+        } else {
+          return el.name.includes(s);
+        }
+      })
+    );
+  };
+
   return (
     <div className={styles.PlantInventory}>
-      <h1>plantInventory</h1>
+      <h1>Plant Inventory</h1>
       <form>
-        <input
-          value={newItem.name}
-          onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
-          type="text"
-          placeholder="Enter Name"
-          className={styles.span2}
-        />
-        <input
-          value={newItem.acresPlanted}
-          onChange={(e) =>
-            setNewItem({ ...newItem, acresPlanted: e.target.value })
-          }
-          type="number"
-          placeholder="Enter numbedr of acres plante"
-          className={styles.span2}
-        />
-        <input
-          value={newItem.lastHarvested}
-          onChange={(e) =>
-            setNewItem({ ...newItem, lastHarvested: e.target.value })
-          }
-          type="date"
-          placeholder="Enter when last harvested"
-        />
-        <input
-          value={newItem.lastHarvestYield}
-          onChange={(e) =>
-            setNewItem({ ...newItem, lastHarvestYield: e.target.value })
-          }
-          type="number"
-          min={0}
-          max={100}
-          placeholder="Enter last harvestyield percentage "
-          className={styles.span2}
-        />
-        <input
-          value={newItem.datePlanted}
-          onChange={(e) =>
-            setNewItem({ ...newItem, datePlanted: e.target.value })
-          }
-          type="date"
-          placeholder="Enter when planted"
-        />
-        <div></div>
+        <div className={styles.span2}>
+          <label>Name Of Plant</label>
+          <input
+            value={newItem.name}
+            onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
+            type="text"
+            placeholder="Enter Name"
+          />
+        </div>
+        <div className={styles.span2}>
+          <label>Acres Planted</label>
+          <input
+            value={newItem.acresPlanted}
+            onChange={(e) =>
+              setNewItem({ ...newItem, acresPlanted: e.target.value })
+            }
+            type="number"
+            placeholder="Enter numbedr of acres plante"
+          />
+        </div>
+        <div className={styles.span2}>
+          <label className={styles.smallText}>Date Planted</label>
+          <input
+            value={newItem.datePlanted}
+            onChange={(e) =>
+              setNewItem({ ...newItem, datePlanted: e.target.value })
+            }
+            type="date"
+            placeholder="Enter when planted"
+          />
+        </div>
+        <div className={styles.span2}>
+          <label>Last Harve.st Date</label>
+          <input
+            value={newItem.lastHarvested}
+            onChange={(e) =>
+              setNewItem({ ...newItem, lastHarvested: e.target.value })
+            }
+            type="date"
+            placeholder="Enter when last harvested"
+          />
+        </div>
+        <div className={styles.span2}>
+          <label className={styles.smallText}>Last Harvest Yield</label>
+          <input
+            value={newItem.lastHarvestYield}
+            onChange={(e) =>
+              setNewItem({ ...newItem, lastHarvestYield: e.target.value })
+            }
+            type="number"
+            min={0}
+            max={100}
+            placeholder="Enter last harvestyield percentage "
+            className={styles.span2}
+          />
+        </div>
         <button onClick={addItem} type="submit">
           Add
         </button>
       </form>
-      <ul>
-        {items.map((item, id) => (
-          <InfoCard
-            key={item.id}
-            name={item.name}
-            lastHarvestDate={item.lastHarvested}
-            datePlanted={item.datePlanted}
-            onClick={() => deleteItem(item.id)}
-          />
-        ))}
-      </ul>
+      <input
+        value={search}
+        onChange={updateSearch}
+        type="text"
+        placeholder="Search..."
+        className={styles.search}
+      ></input>
+      <div className={styles.scrollContainer}>
+        <ul>
+          {filtered.map((item, id) => (
+            <InfoCard
+              key={item.id}
+              name={item.name}
+              acresPlanted={item.acresPlanted}
+              datePlanted={item.datePlanted}
+              lastHarvestDate={item.lastHarvested}
+              lastHarvestYield={item.lastHarvestYield}
+              onClick={() => deleteItem(item.id)}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
