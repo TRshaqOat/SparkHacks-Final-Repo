@@ -2,6 +2,7 @@
 
 import styles from "./page.module.css";
 import PlantInventory from "./components/PlantInventory/PlantInventory";
+import MachineryInventory from "./components/MachineryInventory/MachineryInventory";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
             <PlantInventory></PlantInventory>
           </div>
           <div className={styles.container}>
-            <PlantInventory></PlantInventory>
+            <MachineryInventory></MachineryInventory>
           </div>
         </div>
       </main>
