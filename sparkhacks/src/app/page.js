@@ -16,6 +16,9 @@ import {
   updateDoc,
   setDoc,
 } from "firebase/firestore";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import { useCallback } from "react";
 
 export default function Home() {
   const [items, setItems] = useState([]);
@@ -32,9 +35,108 @@ export default function Home() {
     });
   }, []);
 
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    console.log("Particles container loaded", container);
+  }, []);
+
+  // Configuration options can be placed here or in a separate file
+  const options = {
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          area: 800,
+        },
+      },
+      color: {
+        value: "#ffffff", // Ensure the particles have a visible color
+      },
+      shape: {
+        type: "circle", // Ensure the shape is set to something visible
+      },
+      opacity: {
+        value: 0.5,
+        random: false,
+        anim: {
+          enable: false,
+          speed: 1,
+          opacity_min: 0.1,
+          sync: false,
+        },
+      },
+      size: {
+        value: 3,
+        random: true,
+        anim: {
+          enable: false,
+          speed: 40,
+          size_min: 0.1,
+          sync: false,
+        },
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 6,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+        attract: {
+          enable: false,
+          rotateX: 600,
+          rotateY: 1200,
+        },
+      },
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "repulse",
+        },
+        onclick: {
+          enable: true,
+          mode: "push",
+        },
+        resize: true,
+      },
+      modes: {
+        repulse: {
+          distance: 100,
+          duration: 0.4,
+        },
+        push: {
+          particles_nb: 4,
+        },
+      },
+    },
+    retina_detect: true,
+  };
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          options={options}
+          style={{ position: "absolute", zIndex: -1 }}
+        />
         <Image
           className={styles.logo}
           src="/next.svg"
