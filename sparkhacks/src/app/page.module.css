@@ -305,7 +305,7 @@ a.secondary {
 
 
 /*
-  Plant Inventory
+  Machine Inventory
  */
 
  .MachineryInventory form{ /* Form Area */
@@ -427,3 +427,61 @@ a.secondary {
 }
 
 
+
+/*
+  Weather
+*/
+
+.Weather form{
+  display: grid;
+  column-gap: 5px;
+  grid-template-columns: repeat(14, 1fr);
+  width: 100%;
+}
+
+.Weather button{
+  grid-column: span 2;
+  height: 2.5rem;
+  background-color: #282c34;
+}
+
+/* .Weather input{
+  grid-column: span 2;
+  height: 2.5rem;
+  background-color: #282c34;
+} */
+
+.Weather button:hover{
+  background-color: #4a4a4a;
+}
+
+/* .Weather input {
+  display: none;
+  grid-column: span 2;
+  height: 2.5rem;
+  background-color: #282c34;
+}
+.Weather span {
+  padding: 20px;
+  font-family: sans-serif;
+}
+.Weather input:checked + span {
+    background: #444;
+    color: #fff;
+} */
+
+.Weather input {
+  display: none;
+}
+.Weather span {
+  padding: 20px;
+  font-family: sans-serif;
+}
+.Weather input:checked + span {
+    background: #4a4a4a;
+    color: #fff;
+}
+
+.Weather input:not(:checked)+span{
+  background: rebeccapurple;
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import getData from "./data";
 import Papa from "papaparse";
+import styles from "../../page.module.css";
 
 import Typography from "@mui/material/Typography";
 import { BarPlot } from "@mui/x-charts/BarChart";
@@ -145,7 +146,7 @@ export default function Weather(props) {
   const dates = weatherData.hourly.time.map((day) => new Date(day));
 
   return (
-    <div>
+    <div className={styles.Weather}>
       <h1>Weather</h1>
       <form>
         <button
