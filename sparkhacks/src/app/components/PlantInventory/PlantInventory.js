@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase";
 import InfoCard from "./InfoCard";
+import styles from "../../page.module.css";
 
 export default function PlantInventory() {
   const [items, setItems] = useState([]);
@@ -70,7 +71,7 @@ export default function PlantInventory() {
   };
 
   return (
-    <div>
+    <div className={styles.PlantInventory}>
       <h1>plantInventory</h1>
       <form>
         <input
@@ -78,6 +79,7 @@ export default function PlantInventory() {
           onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
           type="text"
           placeholder="Enter Name"
+          className={styles.span2}
         />
         <input
           value={newItem.acresPlanted}
@@ -86,6 +88,7 @@ export default function PlantInventory() {
           }
           type="number"
           placeholder="Enter numbedr of acres plante"
+          className={styles.span2}
         />
         <input
           value={newItem.lastHarvested}
@@ -104,6 +107,7 @@ export default function PlantInventory() {
           min={0}
           max={100}
           placeholder="Enter last harvestyield percentage "
+          className={styles.span2}
         />
         <input
           value={newItem.datePlanted}
@@ -113,6 +117,7 @@ export default function PlantInventory() {
           type="date"
           placeholder="Enter when planted"
         />
+        <div></div>
         <button onClick={addItem} type="submit">
           Add
         </button>

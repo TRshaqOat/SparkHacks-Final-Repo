@@ -160,3 +160,33 @@ a.secondary {
 
 
 
+
+
+
+
+
+/*
+  Plant Inventory
+ */
+
+.PlantInventory form{
+  border: 2px solid red;
+  display: grid;
+  column-gap: 5px;
+  grid-template-columns: repeat(10, 1fr);
+  width: 100%;
+}
+
+.PlantInventory input{
+  border: 2px solid blue;
+  height: 3em;
+  width: 100%;
+}
+
+.PlantInventory .span2 {
+  grid-column: span 2;
+}
+
+
+
+
