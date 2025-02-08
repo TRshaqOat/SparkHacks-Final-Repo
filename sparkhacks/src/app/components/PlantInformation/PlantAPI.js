@@ -117,7 +117,7 @@ export default function PlantAPI() {
       <FixedSizeList
         height={400}
         fullWidth
-        itemSize={75}
+        itemSize={50}
         itemCount={farmers.length}
         overscanCount={5}
       >

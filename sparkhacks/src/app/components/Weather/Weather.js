@@ -185,7 +185,7 @@ export default function Weather(props) {
           }}
           sx={{ fontSize: "10px;", color: "#d4d4d4" }}
         >
-          Soil-Temp 0cm
+          Soil-Temp Ground Level
         </ToggleButton>
         <ToggleButton
           value="soiltemp18"
@@ -203,7 +203,7 @@ export default function Weather(props) {
           }}
           sx={{ fontSize: "10px;", color: "#d4d4d4" }}
         >
-          Soil Moisture 0-1 cm
+          Soil Moisture 0-1 cm deep
         </ToggleButton>
         <ToggleButton
           value="soilM927"
@@ -212,7 +212,7 @@ export default function Weather(props) {
           }}
           sx={{ fontSize: "10px;", color: "#d4d4d4" }}
         >
-          Soil Moisture 9-27 cm
+          Soil Moisture 9-27 cm deep
         </ToggleButton>
         <ToggleButton
           value="hum"

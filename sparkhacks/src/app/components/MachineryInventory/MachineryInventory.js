@@ -12,6 +12,12 @@ import { db } from "../../firebase";
 import InfoCard from "./InfoCard";
 import styles from "../../page.module.css";
 
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { FixedSizeList } from "react-window";
+import { Stack } from "@mui/material";
+
 export default function MachineryInventory() {
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState({
@@ -185,23 +191,51 @@ export default function MachineryInventory() {
         placeholder="Search..."
         className={styles.search}
       ></input>
-      <div className={styles.scrollContainer}>
-        <ul>
-          {filtered.map((machine, id) => (
-            <InfoCard
-              key={machine.id}
-              name={machine.name}
-              make={machine.make}
-              model={machine.model}
-              modelYear={machine.modelYear}
-              price={machine.price}
-              lastMaintenance={machine.lastMaintenance}
-              registered={machine.registered}
-              onClick={() => deleteItem(machine.id)}
-            />
-          ))}
-        </ul>
-      </div>
+      <FixedSizeList
+        height={400}
+        fullWidth
+        itemSize={75}
+        itemCount={filtered.length}
+        overscanCount={5}
+      >
+        {renderRow}
+      </FixedSizeList>
     </div>
   );
+
+  function renderRow(props) {
+    const { index, style } = props;
+
+    return (
+      <ListItem
+        style={style}
+        key={index}
+        component="div"
+        alignItems="flex-start"
+        divider
+      >
+        <ListItemButton alignItems="center">
+          <ListItemText primary={`${filtered[index].name}`} />
+          <ListItemText secondary={`${filtered[index].make}`} />
+          <ListItemText secondary={`${filtered[index].model}`} />
+          <ListItemText secondary={`${filtered[index].modelYear}`} />
+          <ListItemText secondary={`${filtered[index].price}`} />
+          <ListItemText secondary={`${filtered[index].lastMaintenance}`} />
+          <ListItemText secondary={`${filtered[index].registered}`} />
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              deleteItem(filtered[index].id);
+            }}
+            style={{
+              height: "3rem",
+              marginTop: 0,
+            }}
+          >
+            Delete
+          </button>
+        </ListItemButton>
+      </ListItem>
+    );
+  }
 }
