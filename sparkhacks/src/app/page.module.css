@@ -43,7 +43,8 @@
   padding: 10px;
   margin: 50px;
   border-width: 5px;
-  border-color: rgba(0, 127, 141, 0.305);
+  /*  border-color: rgba(0, 127, 141, 0.305); */
+  border-color: #344E41;
 }
 
 .row{
@@ -211,7 +212,7 @@ a.secondary {
   height: 3em;
   width: 100%;
 
-  background-color: rgb(22, 22, 22);
+  background-color: #282c34;
   border-radius: 15px;
   border-radius: 5px;
   border-color: rgb(162, 162, 162);
@@ -225,8 +226,7 @@ a.secondary {
   opacity: 100%;
   margin-top: 2em;
   margin-bottom: 5px;
-  border-radius: 10px;
-
+  border-radius: 15px;
   /* height: 3em; */
 }
 
@@ -236,17 +236,24 @@ a.secondary {
   border-radius: 10px;
   border-width: 5px;
   border-color: black;
+  background-color: orange;
 }
 
 .PlantInventory .scrollContainer{ /* Padding around the inside of each Quadrent */
-  height: 25vh;
+  height: 30vh;
   overflow-y: scroll;
   border-radius: 10px;
   background-color: rgba(4, 74, 117, 0.655);
+  padding: 10px;
+
 }
 
 .PlantInventory .span2 { /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
+}
+
+.PlantInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
+  grid-column: span 3;
 }
 
 .InfoCard .span2 { /* Inside of Cells */
@@ -297,5 +304,126 @@ a.secondary {
 
 
 
+/*
+  Plant Inventory
+ */
+
+ .MachineryInventory form{ /* Form Area */
+  /* border: 2px solid red; */
+  display: grid;
+  column-gap: 5px;
+  grid-template-columns: repeat(15, 1fr);
+  width: 100%;
+
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 16pt; 
+
+  background-color: rgba(88, 178, 91, 0.392);
+  border-radius: 20px;
+  /* Not able to get border to show??*/
+
+}
+
+.MachineryInventory input{ /* Input Fields */
+  /* border: 2px solid blue; */
+  height: 3em;
+  width: 100%;
+
+  background-color: #282c34;
+  border-radius: 15px;
+  border-radius: 5px;
+  border-color: rgb(162, 162, 162);
+  text-align: center;
+}
+
+
+
+.MachineryInventory button{ /* Add Button */
+  background-color: #353535;
+  opacity: 100%;
+  margin-top: 2em;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  /* height: 3em; */
+}
+
+.MachineryInventory .search {
+  margin-bottom: 5px;
+
+  border-radius: 10px;
+  border-width: 5px;
+  border-color: black;
+  background-color: orange;
+}
+
+.MachineryInventory .scrollContainer{ /* Padding around the inside of each Quadrent */
+  height: 30vh;
+  overflow-y: scroll;
+  border-radius: 10px;
+  background-color: rgba(4, 74, 117, 0.655);
+  padding: 10px;
+
+}
+
+.MachineryInventory .span2 { /*inside of each box in form (name, acres, dates, etc) */
+  grid-column: span 2;
+}
+
+.MachineryInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
+  grid-column: span 3;
+}
+
+
+
+.InfoCard .span2 { /* Inside of Cells */
+  grid-column: span 2;
+  text-align: center;
+  font-weight: 500;
+  background-color: pink; /*PINK HERE*/
+}
+
+.MachineryInventory .InfoCard{ /* Background of Each row */
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: 2.5em;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 7px;
+  background-color: rgba(0, 127, 141, 0.305);
+}
+
+.MachineryInventory .InfoCard .delete { /* Delete Button*/
+  background-color:#979797;
+  height: 2.5em;
+  width: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border-width: 5;
+  border-color: black;
+}
+
+.MachineryInventory .InfoCard .delete:hover{
+  background-color:#9432329d;
+}
+
+.MachineryInventory .InfoCard h2{
+  font-size: medium;
+}
+
+.MachineryInventory .InfoCard h1,
+.MachineryInventory .InfoCard h2,
+.MachineryInventory .InfoCard h3,
+.MachineryInventory .InfoCard h4,
+.MachineryInventory .InfoCard .delete{
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
 
 

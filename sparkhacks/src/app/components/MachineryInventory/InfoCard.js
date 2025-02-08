@@ -4,7 +4,7 @@ export default function InfoCard(props) {
   return (
     <div className={styles.InfoCard}>
       <h1 className={styles.span2}>{props.name}</h1>
-      <h2 className={styles.span2}>{props.make}</h2>
+      <h1 className={styles.span2}>{props.make}</h1>
       <h4 className={styles.span2}>{props.model}</h4>
       <h4 className={styles.span2}>{props.modelYear}</h4>
       <h3 className={styles.span2}>{props.price}</h3>
@@ -13,7 +13,6 @@ export default function InfoCard(props) {
       <div className={styles.delete} onClick={props.onClick}>
         Delete
       </div>
-      {/* <button onClick={props.onClick}>Delete</button> */}
     </div>
   );
 }
