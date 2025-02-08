@@ -32,12 +32,12 @@ export default function MachineryInventory() {
   useEffect(() => {
     var q = query(collection(db, "machineryInventory"));
     var unsubscribe = onSnapshot(q, (querySnapshot) => {
-        let arr = [];
-        querySnapshot.forEach((doc) => {
-            arr.push({ ...doc.data(), id: doc.id });
-        });
-        setItems(arr);
-        setFiltered(arr);
+      let arr = [];
+      querySnapshot.forEach((doc) => {
+        arr.push({ ...doc.data(), id: doc.id });
+      });
+      setItems(arr);
+      setFiltered(arr);
     });
   }, []);
 
@@ -94,7 +94,7 @@ export default function MachineryInventory() {
       <h1>Machinery Inventory</h1>
       <form>
         <div className={styles.span2}>
-          <label>Name Of Machinery</label>
+          <label>Name</label>
           <input
             value={newItem.name}
             onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
@@ -103,23 +103,19 @@ export default function MachineryInventory() {
           />
         </div>
         <div className={styles.span2}>
-          <label>Make of Machinery</label>
+          <label>Make</label>
           <input
             value={newItem.make}
-            onChange={(e) =>
-              setNewItem({ ...newItem, make: e.target.value })
-            }
+            onChange={(e) => setNewItem({ ...newItem, make: e.target.value })}
             type="text"
             placeholder="Enter the make of machinery "
           />
         </div>
         <div className={styles.span2}>
-          <label className={styles.smallText}>Machinery Model</label>
+          <label className={styles.smallText}>Model</label>
           <input
             value={newItem.model}
-            onChange={(e) =>
-              setNewItem({ ...newItem, model: e.target.value })
-            }
+            onChange={(e) => setNewItem({ ...newItem, model: e.target.value })}
             type="text"
             placeholder="Enter model of machinery "
           />
@@ -139,15 +135,13 @@ export default function MachineryInventory() {
           <label>Price</label>
           <input
             value={newItem.price}
-            onChange={(e) =>
-              setNewItem({ ...newItem, price: e.target.value })
-            }
+            onChange={(e) => setNewItem({ ...newItem, price: e.target.value })}
             type="number"
             min={0}
             placeholder="Enter price of machinery "
           />
         </div>
-        <div className={styles.span2}>
+        <div className={styles.span3}>
           <label className={styles.smallText}>Last Maintenance</label>
           <input
             value={newItem.lastMaintenance}
@@ -201,5 +195,4 @@ export default function MachineryInventory() {
       </div>
     </div>
   );
-
 }

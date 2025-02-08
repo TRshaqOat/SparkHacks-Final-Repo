@@ -240,15 +240,20 @@ a.secondary {
 }
 
 .PlantInventory .scrollContainer{ /* Padding around the inside of each Quadrent */
-  height: 25vh;
+  height: 30vh;
   overflow-y: scroll;
   border-radius: 10px;
   background-color: rgba(4, 74, 117, 0.655);
-  
+  padding: 10px;
+
 }
 
 .PlantInventory .span2 { /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
+}
+
+.PlantInventory .span3 { /*inside of each box in form (name, acres, dates, etc) */
+  grid-column: span 3;
 }
 
 .InfoCard .span2 { /* Inside of Cells */
