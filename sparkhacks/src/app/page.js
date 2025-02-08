@@ -2,6 +2,7 @@
 
 import styles from "./page.module.css";
 import PlantInventory from "./components/PlantInventory/PlantInventory";
+import MachineryInventory from "./components/MachineryInventory/MachineryInventory";
 import Weather from "./components/Weather/Weather";
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
             <PlantInventory></PlantInventory>
           </div>
           <div className={styles.container}>
-            <PlantInventory></PlantInventory>
+            <MachineryInventory></MachineryInventory>
           </div>
         </div>
       </main>
