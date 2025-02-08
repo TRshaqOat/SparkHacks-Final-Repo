@@ -226,18 +226,12 @@ a.secondary {
   /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
   text-align: center;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 }
 
 .PlantInventory .span3 {
   /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 3;
   background-color: #03421d9d;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }
 
 .PlantInventory .test{
@@ -249,13 +243,8 @@ a.secondary {
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   background-color: rgb(192, 238, 255);
-=======
   background-color: pink;
->>>>>>> Stashed changes
-=======
   background-color: pink;
   text-wrap: balance;
 }
