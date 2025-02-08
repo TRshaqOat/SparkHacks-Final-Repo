@@ -13,7 +13,6 @@
   background-color: #e0d2c3;
 }
 
-
 .main {
   display: table;
   table-layout: fixed;
@@ -178,7 +177,7 @@ a.secondary {
   text-align: center;
   font-size: 16pt;
 
-  background-color: #A3B18A;
+  background-color: #a3b18a;
   border-radius: 20px;
   /* Not able to get border to show??*/
 }
@@ -226,21 +225,15 @@ a.secondary {
   /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 2;
   text-align: center;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 }
 
 .PlantInventory .span3 {
   /*inside of each box in form (name, acres, dates, etc) */
   grid-column: span 3;
   background-color: #03421d9d;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }
 
-.PlantInventory .test{
+.PlantInventory .test {
   font-size: small;
 }
 
@@ -249,13 +242,7 @@ a.secondary {
   grid-column: span 2;
   text-align: center;
   font-weight: 500;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   background-color: rgb(192, 238, 255);
-=======
-  background-color: pink;
->>>>>>> Stashed changes
-=======
   background-color: pink;
   text-wrap: balance;
 }
@@ -358,7 +345,7 @@ a.secondary {
   height: 30vh;
   overflow-y: scroll;
   border-radius: 10px;
-  background-color: #F5F5DC;
+  background-color: #f5f5dc;
   padding: 10px;
 }
 
