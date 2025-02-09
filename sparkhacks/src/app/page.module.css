@@ -118,6 +118,7 @@ a.secondary {
   grid-row-start: 3;
   display: flex;
   gap: 24px;
+  
 }
 
 .footer a {
