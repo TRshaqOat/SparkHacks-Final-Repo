@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <div className={styles.top}>
-        <h1 className={styles.heading}>Farmers's Dashboard</h1>
+        <h1 className={styles.heading}>Farmer's Shed</h1>
       </div>
       <main className={styles.main}>
         <div className={styles.row}>
