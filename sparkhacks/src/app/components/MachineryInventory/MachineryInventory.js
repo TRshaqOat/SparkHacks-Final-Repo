@@ -80,7 +80,7 @@ export default function MachineryInventory() {
         registered: "",
       });
     } else {
-      alert("NOT ADDED");
+      alert("NOT ADDED - All fields not filled in correctly or wrong input.");
     }
   };
 
@@ -198,6 +198,7 @@ export default function MachineryInventory() {
         onChange={updateSearch}
         type="text"
         placeholder="Search..."
+        className={styles.search}
       ></input>
       <FixedSizeList
         height={400}

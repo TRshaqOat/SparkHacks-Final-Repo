@@ -28,7 +28,6 @@
   font-family: var(--font-geist-sans);
   font-family: var(--font-geist-sans);
   background-color: #e0d2c3;
-
 }
 
 .main {
@@ -52,7 +51,7 @@
   text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: italic;
-  text-decoration:underline;
+  text-decoration: underline;
   color: #53633c;
 }
 
@@ -119,6 +118,7 @@ a.secondary {
   grid-row-start: 3;
   display: flex;
   gap: 24px;
+  
 }
 
 .footer a {
@@ -323,7 +323,7 @@ a.secondary {
   text-align: center;
   font-size: 16pt;
 
-  background-color: rgba(88, 178, 91, 0.392);
+  background-color: #a3b18a;
   border-radius: 20px;
   /* Not able to get border to show??*/
 }
@@ -337,7 +337,6 @@ a.secondary {
 
   background-color: #282c34;
   border-radius: 15px;
-  border-radius: 5px;
   border-color: rgb(162, 162, 162);
   text-align: center;
 }
@@ -354,11 +353,9 @@ a.secondary {
 
 .MachineryInventory .search {
   margin-bottom: 5px;
-
   border-radius: 10px;
-  border-width: 5px;
+  border-width: 2px;
   border-color: black;
-  background-color: #03421d9d;
 }
 
 .MachineryInventory .scrollContainer {
