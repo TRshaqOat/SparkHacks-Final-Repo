@@ -198,6 +198,7 @@ export default function MachineryInventory() {
         onChange={updateSearch}
         type="text"
         placeholder="Search..."
+        className={styles.search}
       ></input>
       <FixedSizeList
         height={400}
